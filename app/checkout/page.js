@@ -188,7 +188,7 @@ export default function Checkout() {
                             <div className="p-4">
                                 <div className="flex items-baseline justify-between text-sm mb-1">
                                     <div>Items ({cart.getCart().length})</div>
-                                    <div>£{(cart.cartTotal() / 100).toFixed(2)}</div>
+                                    <div>${(cart.cartTotal() / 100).toFixed(2)}</div>
                                 </div>
                                 <div className="flex items-center justify-between mb-4 text-sm">
                                     <div>Shipping:</div>
