@@ -1,6 +1,6 @@
 import "./globals.css"
 import UserProvider from './context/user'
-import CartProvider from './context/cart'
+import CartProvider from './context/card'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

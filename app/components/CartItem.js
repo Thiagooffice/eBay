@@ -1,5 +1,5 @@
 'use client'
-import { useCart } from "../context/cart"
+import { useCart } from "../context/card"
 import { toast } from "react-toastify"
 
 export default function CartItem({ product }) {

@@ -5,7 +5,7 @@ import { BsChevronDown } from 'react-icons/bs'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { useUser } from "../../context/user"
 import { useEffect, useState } from "react";
-import { useCart } from "../../context/cart";
+import { useCart } from "../../context/card";
 import { useRouter } from "next/navigation";
 import ClientOnly from "../../components/ClientOnly";
 

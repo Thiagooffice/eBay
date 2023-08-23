@@ -3,7 +3,7 @@
 import MainLayout from "../layouts/MainLayout"
 import SimilarProducts from "../components/SimilarProducts"
 import CartItem from "../components/CartItem"
-import { useCart } from "../context/cart"
+import { useCart } from "../context/card"
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 import useIsLoading from "../hooks/useIsLoading"
