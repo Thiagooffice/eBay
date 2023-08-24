@@ -4,11 +4,14 @@ import MainLayout from "../../layouts/MainLayout"
 import SimilarProducts from "../../components/SimilarProducts"
 import { useEffect, useState } from "react"
 import useIsLoading from "../../hooks/useIsLoading"
-import { useCart } from "../../context/cart"
+import { useCart } from "../../context/card"
 import { toast } from "react-toastify"
+import { BiArrowBack } from "react-icons/bi"
+import { useRouter } from "next/navigation"
 
 export default function Product({ params }) {
   const cart = useCart()
+  const router = useRouter()
 
   const [product, setProduct] = useState({})
 
@@ -24,8 +27,8 @@ export default function Product({ params }) {
 
   }
 
-  useEffect(() => { 
-    getProduct() 
+  useEffect(() => {
+    getProduct()
   }, [])
 
   return (
@@ -33,11 +36,14 @@ export default function Product({ params }) {
       <MainLayout>
 
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex px-4 py-10">
+          <div onClick={() => router.push("/")} className=" w-6 mt-5 ml-5 flex items-center cursor-pointer">
+          <BiArrowBack size={27}/>
+          </div>
+          <div className="flex px-4 pb-10 pt-6">
 
-            {product?.url 
-              ? <img className="w-[40%] rounded-lg" src={product?.url+'/280'} /> 
-              : <div className="w-[40%]"></div> 
+            {product?.url
+              ? <img className="w-[40%] rounded-lg" src={product?.url + '/280'} />
+              : <div className="w-[40%]"></div>
             }
 
             <div className="px-4 w-full">
@@ -57,14 +63,14 @@ export default function Product({ params }) {
               <div className="pt-3">
                 <div className="w-full flex items-center justify-between">
                   <div className="flex items-center">
-                    Price: 
-                    {product?.price 
+                    Price:
+                    {product?.price
                       ? <div className="font-bold text-[20px] ml-2">
-                          GBP £{(product?.price / 100).toFixed(2)}
-                        </div> 
-                    : null }
+                        Dollar ${(product?.price / 100).toFixed(2)}
+                      </div>
+                      : null}
                   </div>
-                  <button 
+                  <button
                     onClick={() => {
                       if (cart.isItemAdded) {
                         cart.removeFromCart(product)
@@ -73,13 +79,13 @@ export default function Product({ params }) {
                         cart.addToCart(product)
                         toast.success('Added to cart', { autoClose: 3000 })
                       }
-                    }} 
+                    }}
                     className={`
                       text-white py-2 px-20 rounded-full cursor-pointer 
                       ${cart.isItemAdded ? 'bg-[#e9a321] hover:bg-[#bf851a]' : 'bg-[#3498C9] hover:bg-[#0054A0]'}
                     `}
                   >
-                      {cart.isItemAdded ? 'Remove From Cart' : 'Add To Cart'}
+                    {cart.isItemAdded ? 'Remove From Cart' : 'Add To Cart'}
                   </button>
                 </div>
               </div>
@@ -97,7 +103,7 @@ export default function Product({ params }) {
 
         <SimilarProducts />
 
-        </MainLayout>
+      </MainLayout>
     </>
   )
 }
