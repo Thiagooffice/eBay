@@ -3,8 +3,8 @@
 import TopMenu from './includes/TopMenu'
 import MainHeader from './includes/MainHeader'
 import SubMenu from './includes/SubMenu'
+import Loading from "../components/Loading"
 import Footer from './includes/Footer'
-import Loading from '../components/Loading'
 import { useEffect, useState } from 'react'
 
 export default function MainLayout({ children }) {
