@@ -4,7 +4,7 @@ import CheckoutItem from "../components/CheckoutItem"
 import MainLayout from "../layouts/MainLayout"
 import Link from "next/link"
 import { useUser } from "@/app/context/user";
-import { useCart } from "../context/cart";
+import { useCart } from "../context/card";
 import { useEffect, useRef, useState } from "react";
 import useIsLoading from "../hooks/useIsLoading";
 import useUserAddress from "../hooks/useUserAddress";
