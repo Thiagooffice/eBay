@@ -200,7 +200,7 @@ export default function Checkout() {
                                 <div className="flex items-center justify-between my-4">
                                     <div className="font-semibold">Order total</div>
                                     <div className="text-2xl font-semibold">
-                                        £{(cart.cartTotal() / 100).toFixed(2)}
+                                        ${(cart.cartTotal() / 100).toFixed(2)}
                                     </div>
                                 </div>
 

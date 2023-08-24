@@ -17,11 +17,11 @@ export default function CheckoutItem({ product }) {
                 </div>
 
                 <div className="text-lg font-semibold ">
-                    <span className="font-bold">£{(product.price / 100).toFixed(2)}</span>
+                    <span className="font-bold">${(product.price / 100).toFixed(2)}</span>
                 </div>
 
                 <div className="relative flex items-center text-[14px] text-gray-500">
-                    <div className="line-through">£{((product.price * 1.2) / 100).toFixed(2)}</div>
+                    <div className="line-through">${((product.price * 1.2) / 100).toFixed(2)}</div>
                     <div className="px-2">-</div>
                     <div className="line-through">20%</div>
                 </div>
